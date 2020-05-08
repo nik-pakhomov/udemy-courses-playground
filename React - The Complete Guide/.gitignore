@@ -1,0 +1,15 @@
+# VS Code
+.vscode
+
+# Node
+npm-debug.log
+node_modules
+
+# Mac
+.DS_Store
+
+# General
+log/
+*.log
+lib/
+dist/
