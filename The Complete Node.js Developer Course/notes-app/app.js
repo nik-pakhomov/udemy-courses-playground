@@ -1,7 +1,12 @@
 const chalk = require("chalk").default;
 const getNotes = require("./notes");
 
-const msg = getNotes();
-console.log(msg);
+const command = process.argv[2];
 
-console.log(chalk.bold.inverse.blue("Error!"));
+console.log(process.argv);
+
+if (command === "add") {
+  console.log("Adding note!");
+} else if (command === "remove") {
+  console.log("Removing note!");
+}
