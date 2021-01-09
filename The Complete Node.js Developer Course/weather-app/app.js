@@ -1,4 +1,5 @@
 const request = require("request");
+const geocode = require("./utils/geocode");
 
 // const url =
 //   "http://api.weatherstack.com/current?access_key=3b88940dfbdb3c79a7a9b0ce3b85ce4c&query=Saint-Petersburg&units=f";
@@ -20,18 +21,23 @@ const request = require("request");
 //   }
 // });
 
-const geocodeURL =
-  "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoibnBha2hvbW92IiwiYSI6ImNraXJ4cGdqdjBmZG8ycXNjajM3MXc2MHQifQ.9mWZSlUZlR_vXi5wyJtHlw&limit=1";
+// const geocodeURL =
+//   "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoibnBha2hvbW92IiwiYSI6ImNraXJ4cGdqdjBmZG8ycXNjajM3MXc2MHQifQ.9mWZSlUZlR_vXi5wyJtHlw&limit=1";
 
-request({ url: geocodeURL, json: true }, (error, response) => {
-  if (error) {
-    console.log("Unable to connect to location services!");
-  } else if (response.body.features.length === 0) {
-    console.log("Unable to find location. Try another search.");
-  } else {
-    const latitude = response.body.features[0].center[1];
-    const longitude = response.body.features[0].center[0];
+// request({ url: geocodeURL, json: true }, (error, response) => {
+//   if (error) {
+//     console.log("Unable to connect to location services!");
+//   } else if (response.body.features.length === 0) {
+//     console.log("Unable to find location. Try another search.");
+//   } else {
+//     const latitude = response.body.features[0].center[1];
+//     const longitude = response.body.features[0].center[0];
 
-    console.log(latitude, longitude);
-  }
+//     console.log(latitude, longitude);
+//   }
+// });
+
+geocode("Saint-Petersburg", (error, data) => {
+  console.log("Error", error);
+  console.log("Data", data);
 });
