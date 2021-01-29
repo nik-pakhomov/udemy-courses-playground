@@ -7,11 +7,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      username: "Nikita"
+      username: "Nikita",
     };
   }
 
-  handleUsernameChange = event => {
+  handleUsernameChange = (event) => {
     this.setState({ username: event.target.value });
   };
 
