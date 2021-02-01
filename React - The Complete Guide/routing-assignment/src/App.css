@@ -1,0 +1,19 @@
+.App-Header ul {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+.App-Header li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.App-Header a {
+  text-decoration: none;
+}
+
+.App-Header a:hover,
+.App-Header a.active {
+  color: coral;
+}
