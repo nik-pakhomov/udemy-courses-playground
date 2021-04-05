@@ -8,3 +8,4 @@ This folder contains examples of solutions that were created during learning on 
 | ------------------------- | --------------------------------------------------------------- |
 | first-demo-starting-setup | Section 1: Getting Started                                      |
 | nodejs-app-starting-setup | Section 2: Docker Images & Containers: The Core Building Blocks |
+| python-app-starting-setup | Section 2: Docker Images & Containers: The Core Building Blocks |
