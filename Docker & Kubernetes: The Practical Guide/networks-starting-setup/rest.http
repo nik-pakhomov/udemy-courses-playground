@@ -12,8 +12,9 @@ GET http://localhost:3000/favorites
 
 POST http://localhost:3000/favorites
 content-type: application/json
+
 {
     "name": "Return of the Jedi",
-    "type": "movie"
+    "type": "movie",
     "url": "https://swapi.dev/api/films/3/"
 }
