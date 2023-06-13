@@ -12,7 +12,7 @@ cd ./backend
 docker build -t goals-node .
 
 # Run backend container
-docker run -d --rm --name goals-backend -p 80:80 --network goals-net goals-node
+docker run -d --rm --name goals-backend -v "$(pwd)":/app -v logs:/app/logs -v /app/node_modules -p 80:80 --network goals-net -e MONGODB_USERNAME=my-user -e MONGODB_PASSWORD=secret goals-node
 
 # Build frontend image
 cd ../frontend
