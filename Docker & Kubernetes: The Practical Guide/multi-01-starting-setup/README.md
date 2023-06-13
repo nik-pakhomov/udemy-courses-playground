@@ -5,7 +5,7 @@ To run this project in separate Docker containers:
 docker network create goals-net
 
 # Run MongoDB container
-docker run -d --rm --name mongodb --network goals-net mongo
+docker run -d --rm --name mongodb -v data:/data/db --network goals-net -e MONGO_INITDB_ROOT_USERNAME=my-user -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
 
 # Build backend image
 cd ./backend
