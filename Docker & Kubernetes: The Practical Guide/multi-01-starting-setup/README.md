@@ -16,5 +16,5 @@ docker run -d --rm --name goals-backend -v "$(pwd)":/app -v logs:/app/logs -v /a
 
 # Build frontend image
 cd ../frontend
-docker run -it --rm --name goals-frontend -p 3000:3000 goals-react
+docker run -it --rm --name goals-frontend -v "$(pwd)/src":/app/src -p 3000:3000 goals-react
 ```
