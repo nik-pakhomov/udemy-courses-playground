@@ -7,6 +7,7 @@ services:
       - ./env/mongodb.env
     volumes:
       - data:/data/db
+
   backend:
     build: ./backend
     env_file:
@@ -17,7 +18,15 @@ services:
       - logs:/app/logs
       - /app/node_modules
       - ./backend:/app
-  # frontend:
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src
+    stdin_open: true
+    tty: true
 
 volumes:
   data:
