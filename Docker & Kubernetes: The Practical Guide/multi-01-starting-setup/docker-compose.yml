@@ -7,8 +7,18 @@ services:
       - ./env/mongodb.env
     volumes:
       - data:/data/db
-  # backend:
+  backend:
+    build: ./backend
+    env_file:
+      - ./env/backend.env
+    ports:
+      - "80:80"
+    volumes:
+      - logs:/app/logs
+      - /app/node_modules
+      - ./backend:/app
   # frontend:
 
 volumes:
   data:
+  logs:
